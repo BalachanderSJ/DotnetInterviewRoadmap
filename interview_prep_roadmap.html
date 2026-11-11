@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Senior / Lead Full-Stack .NET Interview Prep Roadmap</title>
+<style>
+  :root {
+    --ink: #0f172a;
+    --muted: #475569;
+    --accent: #4338ca;
+    --accent-dark: #1e1b4b;
+    --accent-soft: #6366f1;
+    --line: #d7dce5;
+    --code-bg: #0b1220;
+    --code-fg: #e2e8f0;
+    --chip: #eef2ff;
+    --teal: #0f766e;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: "Segoe UI", Calibri, Arial, sans-serif;
+    color: var(--ink);
+    line-height: 1.42;
+    font-size: 10.3pt;
+    margin: 0;
+  }
+  .cover {
+    text-align: center;
+    padding: 150px 40px 40px;
+    page-break-after: always;
+    background: linear-gradient(160deg, #1e1b4b 0%, #312e81 55%, #4338ca 100%);
+    color: #fff;
+    min-height: 100vh;
+  }
+  .cover h1 { font-size: 31pt; margin: 6px 0; line-height: 1.12; color: #fff; }
+  .cover h2 { font-size: 13pt; color: #c7d2fe; font-weight: 500; border: none; margin: 0; }
+  .cover .meta { margin-top: 54px; color: #e0e7ff; font-size: 10.5pt; }
+  .cover .meta p { margin: 4px 0; }
+  .cover .rule { width: 120px; height: 3px; background: #818cf8; margin: 20px auto; border-radius: 2px; }
+  .cover .tag { background: rgba(255,255,255,.14); color: #e0e7ff; }
+  .cover .small { color: #c7d2fe; }
+  h1.section {
+    font-size: 18pt; color: #fff;
+    background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+    padding: 11px 16px; border-radius: 5px;
+    page-break-before: always; margin: 0 0 6px;
+  }
+  h2 { font-size: 13.5pt; color: var(--accent-dark); border-bottom: 2px solid var(--accent-soft); padding-bottom: 3px; margin-top: 22px; }
+  h3 { font-size: 11.5pt; color: var(--accent); margin: 16px 0 5px; }
+  h4 { font-size: 10.3pt; color: var(--accent-dark); margin: 11px 0 3px; }
+  p { margin: 5px 0; }
+  ul, ol { margin: 5px 0; padding-left: 20px; }
+  li { margin: 2px 0; }
+  code { font-family: "Cascadia Code", Consolas, monospace; background: #eef0f5; color: #b02a5b; padding: 1px 4px; border-radius: 3px; font-size: 9pt; }
+  pre { background: var(--code-bg); color: var(--code-fg); padding: 11px 13px; border-radius: 5px; overflow-x: auto; font-size: 8.4pt; line-height: 1.4; page-break-inside: avoid; }
+  pre code { background: none; color: inherit; padding: 0; font-size: inherit; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 9.1pt; page-break-inside: avoid; }
+  th, td { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: var(--accent-dark); color: #fff; }
+  tr:nth-child(even) td { background: #f5f6fb; }
+  .qa { border-left: 3px solid var(--accent-soft); padding: 2px 0 2px 12px; margin: 13px 0; page-break-inside: avoid; }
+  .q { font-weight: 700; color: var(--accent-dark); font-size: 10.6pt; }
+  .tag { display: inline-block; background: var(--chip); color: var(--accent-dark); font-size: 7.5pt; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; padding: 2px 8px; border-radius: 9px; margin-bottom: 5px; }
+  .star { margin: 11px 0; page-break-inside: avoid; }
+  .star .label { display: inline-block; width: 82px; font-weight: 700; color: var(--teal); }
+  .callout { background: #f0fdfa; border: 1px solid #5eead4; border-left: 4px solid var(--teal); padding: 8px 12px; border-radius: 4px; margin: 11px 0; font-size: 9.6pt; }
+  .day { background: #f5f6fb; border: 1px solid var(--line); border-radius: 5px; padding: 8px 12px; margin: 8px 0; page-break-inside: avoid; }
+  .day h4 { margin-top: 0; color: var(--accent); }
+  .toc a { color: var(--accent-dark); text-decoration: none; }
+  .toc li { margin: 5px 0; font-size: 11pt; }
+  .small { font-size: 8.6pt; color: var(--muted); }
+  strong { color: var(--accent-dark); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cheat { font-size: 8.9pt; }
+  .cheat h3 { margin-top: 10px; font-size: 10.5pt; }
+  @page { size: A4; margin: 15mm 13mm; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="tag">Confidential &middot; Candidate Prep Dossier</div>
+  <h1>Senior / Lead Full-Stack .NET &amp; Azure</h1>
+  <div class="rule"></div>
+  <h2>Elite 14-Day Interview Preparation Roadmap</h2>
+  <p class="small" style="margin-top:12px;">Target: 8 YoE &middot; Technical Lead / Principal Engineer Bar</p>
+  <div class="meta">
+    <p><strong style="color:#fff;">Panel Simulation:</strong> Enterprise Architect + Engineering Director</p>
+    <p><strong style="color:#fff;">Core Stack:</strong> C# / ASP.NET Core &middot; React + TypeScript &middot; SQL Server &middot; Azure + AWS</p>
+    <p class="small">Prepared as a strict hiring-panel coaching artifact</p>
+  </div>
+</div>
+
+<!-- TOC -->
+<h1 class="section">Contents</h1>
+<ul class="toc">
+  <li><a href="#p0">0. How To Use This Dossier</a></li>
+  <li><a href="#p1">1. 14-Day Preparation Roadmap (Sprint Schedule)</a></li>
+  <li><a href="#p2">2. High-Frequency Technical Questions &amp; Senior Answers</a></li>
+  <li><a href="#p3">3. Tech Lead Behavioral &amp; Agile Scenarios (STAR)</a></li>
+  <li><a href="#p4">4. Differentiating "Bonus Points" Playbook</a></li>
+  <li><a href="#p5">5. Large-Enterprise Fit Playbook</a></li>
+  <li><a href="#p6">6. Rapid-Fire Closing Round &amp; Questions To Ask Them</a></li>
+  <li><a href="#p7">7. One-Page Cheat Sheet (print &amp; carry)</a></li>
+</ul>
+
+<h1 class="section" id="p0">0. How To Use This Dossier</h1>
+<p>Not a glossary &mdash; a judgment trainer. Every answer is written as an engineer who has owned production incidents and led squads. Three rules:</p>
+<ul>
+  <li><strong>Calibrate, don't memorize.</strong> Rehearse the trade-off reasoning, not the wording.</li>
+  <li><strong>Close every loop.</strong> End each technical answer with the trade-off you accepted and how you'd <em>measure</em> it was right (p99, error budget, cost, MTTR).</li>
+  <li><strong>Decision first, then justify, then the escape hatch</strong> ("where this breaks down is...").</li>
+</ul>
+<div class="callout"><strong>Signal they're buying:</strong> they stop asking "how" and start asking "when would you <em>not</em> do this?" &mdash; that's the seniority probe. Welcome it.</div>
+
+<!-- SECTION 1 -->
+<h1 class="section" id="p1">1. 14-Day Preparation Roadmap (Sprint Schedule)</h1>
+<p>Two weeks = one sprint; the panel is the demo. Each day has a <strong>Build</strong> (hands-on), <strong>Drill</strong> (recall under pressure), <strong>Reflect</strong> (one-paragraph trade-off).</p>
+
+<h2>Phase 1 &mdash; Days 1&ndash;4: Core Backend Depth</h2>
+<div class="day">
+  <h4>Day 1 &mdash; .NET Runtime Internals &amp; Async Model</h4>
+  <ul>
+    <li><strong>Build:</strong> Minimal API exercising <code>async/await</code>, <code>ValueTask</code>, <code>IAsyncEnumerable</code>; watch ThreadPool queue length with <code>dotnet-counters</code> under load.</li>
+    <li><strong>Study:</strong> Task vs ValueTask; no sync-context in Core; thread-pool starvation from sync-over-async.</li>
+    <li><strong>Drill:</strong> Trace one HTTP request, Kestrel socket &rarr; response flush. <strong>Reflect:</strong> When is <code>ValueTask</code> a net negative?</li>
+  </ul>
+</div>
+<div class="day">
+  <h4>Day 2 &mdash; Memory, GC &amp; Allocation Discipline</h4>
+  <ul>
+    <li><strong>Build:</strong> Profile a hot path; convert a string loop to <code>Span&lt;T&gt;</code>; measure Gen0 before/after.</li>
+    <li><strong>Study:</strong> Generational GC, LOH (&gt;85KB) fragmentation, Server vs Workstation GC, <code>ArrayPool&lt;T&gt;</code>, <code>stackalloc</code>.</li>
+    <li><strong>Drill:</strong> "p99 spikes every ~30s" &rarr; walk the GC hypothesis.</li>
+  </ul>
+</div>
+<div class="day">
+  <h4>Day 3 &mdash; EF Core vs Dapper</h4>
+  <ul>
+    <li><strong>Build:</strong> Same query both ways (tracking vs <code>AsNoTracking</code>, split vs single, compiled); compare generated SQL + plans.</li>
+    <li><strong>Study:</strong> N+1, cartesian explosion, change-tracker cost, <code>DbContext</code> pooling. <strong>Drill:</strong> Defend a hybrid (EF writes, Dapper read-models).</li>
+  </ul>
+</div>
+<div class="day">
+  <h4>Day 4 &mdash; SQL Server Performance &amp; Concurrency</h4>
+  <ul>
+    <li><strong>Build:</strong> Reproduce a deadlock, capture the graph via Extended Events, fix with access ordering + covering index.</li>
+    <li><strong>Study:</strong> Clustered vs non-clustered, composite key order, included columns, parameter sniffing, RCSI, <code>rowversion</code>.</li>
+    <li><strong>Drill:</strong> Read a plan aloud &mdash; key lookup, seek vs scan, spill warnings.</li>
+  </ul>
+</div>
+
+<h2>Phase 2 &mdash; Days 5&ndash;7: Frontend &amp; System Architecture</h2>
+<div class="day">
+  <h4>Day 5 &mdash; React Performance &amp; State at Scale</h4>
+  <ul>
+    <li><strong>Build:</strong> Profile a re-render cascade; fix with <code>memo</code>, stable callbacks, selectors, virtualization.</li>
+    <li><strong>Study:</strong> RTK vs Context vs server-state (React Query); referential equality; reconciliation. <strong>Drill:</strong> "One input re-renders the dashboard" &mdash; diagnose in 90s.</li>
+  </ul>
+</div>
+<div class="day">
+  <h4>Day 6 &mdash; API &amp; Front-End Architecture</h4>
+  <ul>
+    <li><strong>Build:</strong> Design a BFF; REST vs GraphQL for an aggregation screen; a micro-frontend seam + failure modes.</li>
+    <li><strong>Study:</strong> token storage (<code>httpOnly</code>+CSRF vs localStorage+XSS), idempotency keys, WebSockets vs SSE vs polling.</li>
+  </ul>
+</div>
+<div class="day">
+  <h4>Day 7 &mdash; Cloud Patterns &amp; Zero Trust</h4>
+  <ul>
+    <li><strong>Build:</strong> Whiteboard an event-driven multi-tenant pipeline on Azure (Service Bus + Functions + Key Vault + Front Door) + AWS twin.</li>
+    <li><strong>Study:</strong> managed identity, Zero Trust triad, OAuth2/OIDC, private endpoints, Blue/Green + Canary. <strong>Reflect:</strong> pool vs silo vs bridge tenancy.</li>
+  </ul>
+</div>
+
+<h2>Phase 3 &mdash; Days 8&ndash;11: Technical Leadership &amp; Delivery</h2>
+<div class="day"><h4>Day 8 &mdash; Agile Execution &amp; Capacity Mapping</h4><ul><li>Velocity vs commitment, capacity math (PTO/ceremonies/support), skill-to-story mapping, ~20% debt reserve. Draft the scope-creep STAR.</li></ul></div>
+<div class="day"><h4>Day 9 &mdash; Stakeholder &amp; Delivery-Risk Management</h4><ul><li>Escalation framing (impact/options/recommendation/ask), status reporting that shields without hiding, RAID logs. Draft the release-block STAR.</li></ul></div>
+<div class="day"><h4>Day 10 &mdash; Code Quality, Architecture &amp; Mentoring</h4><ul><li>Clean Architecture/SOLID without dogma, PR governance, the "brilliant jerk," lifting an underperformer with a concrete plan.</li></ul></div>
+<div class="day"><h4>Day 11 &mdash; CI/CD Governance &amp; Test Strategy</h4><ul><li>Trunk-based vs GitFlow, PR gates, DORA metrics, test-pyramid ownership, automated rollback policy, environment strategy.</li></ul></div>
+
+<h2>Phase 4 &mdash; Days 12&ndash;14: AI Tooling, Live Design &amp; Mock Loops</h2>
+<div class="day"><h4>Day 12 &mdash; AI-Assisted Development Narrative</h4><ul><li>3-minute story: Composer multi-file refactor, project <code>.cursorrules</code>, AI-generated tests you reviewed, a diff you <em>rejected</em> for security/memory.</li></ul></div>
+<div class="day"><h4>Day 13 &mdash; Live System Design Drill (timed)</h4><ul><li>45 min: "Multi-tenant transaction system, 10k TPS, exactly-once effect." Record; grade on framing, trade-offs, failure modes, capacity math.</li></ul></div>
+<div class="day"><h4>Day 14 &mdash; Executive Mock Loops &amp; Reset</h4><ul><li>Two mocks (technical-deep + leadership). Then stop &mdash; light review of STAR cards only. Sleep &gt; cramming.</li></ul></div>
+
+<!-- SECTION 2 -->
+<h1 class="section" id="p2">2. High-Frequency Technical Questions &amp; Senior Answers</h1>
+
+<h2>2.1 C# / ASP.NET Core Web API</h2>
+
+<div class="qa">
+  <div class="tag">Async Lifecycle</div>
+  <p class="q">Q1. What actually happens when an <code>async</code> action awaits a DB call under load, and why does it scale?</p>
+  <p>At the await, the method becomes a state machine; if the I/O isn't done, the continuation is registered and <strong>the thread returns to the pool</strong> rather than blocking. IOCP signals completion, the continuation resumes on a pool thread. This scales because threads are expensive (~1MB stack + context switches): a handful service thousands of I/O-bound requests. ASP.NET Core has <strong>no sync-context</strong>, so <code>ConfigureAwait(false)</code> is a no-op in app code (still matters in libraries).</p>
+  <p><strong>Breaks down:</strong> nothing gained for CPU-bound work. The classic killer is <em>sync-over-async</em> (<code>.Result</code>/<code>.Wait()</code>): a blocked pool thread triggers <strong>thread-pool starvation</strong> (pool injects ~1 thread/500ms), latency climbs while CPU sits idle. I've root-caused exactly that &mdash; fix was async end-to-end, not more threads.</p>
+</div>
+
+<div class="qa">
+  <div class="tag">ValueTask</div>
+  <p class="q">Q2. When <code>ValueTask&lt;T&gt;</code> over <code>Task&lt;T&gt;</code>, and when is it a trap?</p>
+  <p><code>Task&lt;T&gt;</code> heap-allocates per call. On a hot path that usually completes synchronously (cache hit, buffered read), <code>ValueTask</code> allocates nothing. Traps I treat as rules: await it <em>exactly once</em>, never twice, never read <code>.Result</code> before completion, never store-and-await-later &mdash; if I need any of those, call <code>.AsTask()</code> once. Default to <code>Task</code> on public APIs; reach for <code>ValueTask</code> only when a profiler proves the allocation matters on a genuinely hot, sync-completing path (it can be slower if usually async).</p>
+</div>
+
+<div class="qa">
+  <div class="tag">GC / LOH</div>
+  <p class="q">Q3. Periodic latency spikes + rising memory. Pin it on GC and pull the levers.</p>
+  <p>Confirm with data: <code>dotnet-counters</code> for heap size, Gen0/1/2, % time in GC, alloc rate; if spikes track Gen2/LOH, that's the smoking gun. Then a trace to find <em>who</em> allocates. Usual causes/fixes: <strong>LOH fragmentation</strong> (objects &gt;85KB &mdash; big byte[]/serialization) &rarr; pool with <code>ArrayPool&lt;T&gt;</code>/RecyclableMemoryStream, stream not buffer; <strong>Gen0 churn</strong> (LINQ/string/boxing hot loops) &rarr; <code>Span&lt;T&gt;</code>/<code>stackalloc</code>; <strong>wrong GC mode</strong> &rarr; Server + concurrent GC for throughput; <strong>mid-life leaks</strong> (static handlers, unbounded caches) &rarr; weak refs, bounded <code>IMemoryCache</code>. <strong>Trade-off:</strong> Server GC costs memory + background threads; on a constrained container validate against the limit to avoid OOMKills.</p>
+</div>
+
+<div class="qa">
+  <div class="tag">Middleware</div>
+  <p class="q">Q4. Design a middleware pipeline for correlation IDs, exception handling, tenant resolution. Ordering pitfalls?</p>
+  <p>Order <em>is</em> behavior. Mine: exception/problem-details first (wraps all) &rarr; correlation-id enrichment &rarr; HTTPS/forwarded-headers &rarr; authN &rarr; authZ &rarr; tenant resolution (needs principal) &rarr; routing/endpoint. Anything needing endpoint metadata goes after <code>UseRouting</code>; inject per-request services via <code>InvokeAsync</code> params, not the constructor (middleware is singleton). <strong>Burned by:</strong> setting headers after the response started (use an <code>OnStarting</code> callback instead) and capturing a scoped <code>DbContext</code> in the singleton. Tenant resolution writes to a scoped <code>ITenantContext</code> so EF query filters auto-scope.</p>
+</div>
+
+<h2>2.2 SQL Server &amp; Data Engineering</h2>
+
+<div class="qa">
+  <div class="tag">Query Latency</div>
+  <p class="q">Q5. Fast-before, slow-now, same query, prod only. Diagnostic path?</p>
+  <p>Don't rewrite before I read the plan. Capture the <strong>actual</strong> plan + Query Store stats; look for seek vs scan, an expensive <strong>key lookup</strong> at volume, estimated-vs-actual row skew (stale stats), spills (under-sized grant), and two plans for one query (<strong>parameter sniffing</strong>). "Fast then slow" is almost always: stale statistics &rarr; update/force plan; parameter sniffing &rarr; <code>OPTIMIZE FOR</code>/<code>RECOMPILE</code>; blocking &rarr; check waits in <code>dm_exec_requests</code>; or a missing covering index as the table grew. Query Store's regression view shows the exact moment + plan that changed &mdash; I bring that artifact, not a guess.</p>
+</div>
+
+<div class="qa">
+  <div class="tag">Deadlocks</div>
+  <p class="q">Q6. Recurring deadlocks under heavy writes &mdash; without just retrying.</p>
+  <p>Retries are a seatbelt. Capture the <strong>deadlock graph</strong> (XE <code>xml_deadlock_report</code>). Root causes: (1) inconsistent lock ordering &rarr; enforce a canonical access order everywhere; (2) wide scans taking too many locks &rarr; covering/narrower index so writers seek; (3) long transactions &rarr; shrink scope. <em>Then</em> add idempotent retry-on-1205 with jittered backoff as defense-in-depth, and consider <strong>RCSI</strong> to take readers off writers &mdash; naming the trade-off (tempdb pressure, changed read semantics), so I validate tempdb first.</p>
+</div>
+
+<div class="qa">
+  <div class="tag">Indexing</div>
+  <p class="q">Q7. Clustered vs non-clustered; composite column order?</p>
+  <p>Clustered = physical order; one per table; narrow, static, ever-increasing (a random GUID clustered key causes page splits &mdash; use sequential key, keep GUID as non-clustered unique). Non-clustered are B-trees pointing at the clustered key. Composite order = <strong>Equality, Range, then Include</strong>: equality/most-selective columns lead, range next, select-only columns into <code>INCLUDE</code> to make it <strong>covering</strong> (kills key lookups). (A,B) can seek on A or A+B, not B alone. Every index costs on every write &mdash; I audit <code>dm_db_index_usage_stats</code> for unused/duplicate rather than carpet-bombing.</p>
+</div>
+
+<div class="qa">
+  <div class="tag">Concurrency</div>
+  <p class="q">Q8. Optimistic vs pessimistic under heavy traffic?</p>
+  <p>Default <strong>optimistic</strong> for read-heavy web contention: a <code>rowversion</code> in the UPDATE's WHERE; zero rows &rarr; someone beat me &rarr; surface a conflict (EF's <code>DbUpdateConcurrencyException</code>). No locks across think-time, so it scales. <strong>Pessimistic</strong> (<code>UPDLOCK</code>/<code>HOLDLOCK</code>) only for short, high-value critical sections where a conflict is costly to reconcile (scarce inventory, unique allocation) &mdash; keep the locked region tiny. For money movement I add an <strong>idempotency key</strong> so a retry can't double-apply &mdash; concurrency and idempotency are separate problems, both handled.</p>
+</div>
+
+<h2>2.3 React.js &amp; Full-Stack Integration</h2>
+
+<div class="qa">
+  <div class="tag">State at Scale</div>
+  <p class="q">Q9. Structuring state in a large React app for performance + maintainability?</p>
+  <p>Biggest lever: <strong>separate server state from client state</strong>. Fetched data &rarr; React Query/RTK Query (caching, dedup, background refetch, stale-while-revalidate) &mdash; deletes mountains of manual loading/error boilerplate. True client state (auth, flags, theme) &rarr; RTK/Zustand with selectors. Ephemeral UI &rarr; local <code>useState</code>. Use <strong>Context sparingly</strong> &mdash; it's DI, not a store; every consumer re-renders on change, so split providers and keep it low-frequency. Discipline that pays: colocation + selector reads.</p>
+</div>
+
+<div class="qa">
+  <div class="tag">Rendering</div>
+  <p class="q">Q10. Dashboard re-renders excessively. Find and fix the cascade.</p>
+  <p><strong>React DevTools Profiler</strong> shows which components render and <em>why</em>. Usual culprits: new object/array/fn literals passed as props (breaks referential equality), state lifted too high, unstable Context value. Surgical fixes: <code>React.memo</code> on pure leaves; <code>useCallback</code>/<code>useMemo</code> to stabilize <em>references</em> only where a memoized child/effect needs it; move state down or use a selector store; <strong>virtualize long lists</strong> (<code>react-window</code>). I avoid cargo-cult <code>useMemo</code> &mdash; it has cost and masks bad data flow &mdash; and re-profile to verify commit counts dropped.</p>
+</div>
+
+<div class="qa">
+  <div class="tag">Token Security</div>
+  <p class="q">Q11. localStorage or cookies for the SPA token? Defend it.</p>
+  <p><strong><code>Secure</code>, <code>HttpOnly</code>, <code>SameSite</code> cookie</strong>, not localStorage. localStorage is JS-readable, so one <strong>XSS</strong> exfiltrates the token instantly; <code>HttpOnly</code> is invisible to JS. Cookie cost is <strong>CSRF</strong> &mdash; mitigated with <code>SameSite</code> + anti-forgery tokens + tight CORS. What I ship is a <strong>BFF</strong>: SPA holds an <code>HttpOnly</code> session cookie; the backend holds the real OAuth tokens and calls downstream &mdash; the browser never sees a bearer token. Plus short-lived access + refresh rotation and a strict CSP. "No XSS" is the real goal; cookie storage just caps the blast radius.</p>
+</div>
+
+<div class="qa">
+  <div class="tag">Realtime</div>
+  <p class="q">Q12. Polling vs SSE vs WebSockets &mdash; choose and make it resilient.</p>
+  <p>By data shape, not trend. <strong>Polling</strong> (long-poll / interval + conditional <code>ETag</code>/304) for low-frequency, tolerant updates &mdash; operationally boring, a virtue. <strong>SSE</strong> for one-way server&rarr;client streams (notifications, progress). <strong>WebSockets</strong>/SignalR for low-latency bidirectional (chat, collab). Resilience: plan for the socket <em>failing</em> &mdash; backoff+jitter reconnect, heartbeat for half-open, sequence numbers to resync missed events, fallback to SSE/long-poll (SignalR negotiates). At scale name the scale-out problem: sticky sessions or a <strong>backplane</strong> (Redis/Azure SignalR) so a message on one instance reaches clients on another.</p>
+</div>
+
+<h2>2.4 Cloud Architecture (Azure &amp; AWS)</h2>
+
+<div class="qa">
+  <div class="tag">System Design &middot; Flagship</div>
+  <p class="q">Q13. Design an event-driven, multi-tenant transaction system. ~10k TPS, exactly-once effect, zero-downtime deploys. Azure, with the AWS twin.</p>
+  <p><strong>1. Clarify:</strong> TPS/burst, payload, latency SLO, ordering (per-account vs global), tenant count/isolation/compliance, and what "exactly-once" means &mdash; I deliver <em>effectively-once</em> via idempotency (true exactly-once <em>delivery</em> is a myth).</p>
+  <p><strong>2. Edge:</strong> <strong>Front Door</strong> (global LB + WAF + TLS) &rarr; <strong>API Management</strong> (throttling, per-tenant rate limits, JWT validation). Intake API is thin: validate, auth tenant, assign <strong>idempotency key</strong>, publish &mdash; no inline work.</p>
+  <p><strong>3. Messaging:</strong> <strong>Service Bus</strong> for commands (FIFO via <em>sessions</em> keyed on account id, DLQ, dedup, competing consumers); <strong>Event Hubs</strong> for high-volume event fan-out (audit/analytics/projections).</p>
+  <p><strong>4. Compute:</strong> <strong>Functions</strong> (or Container Apps/AKS) as competing consumers scaling on queue depth (KEDA). Processing is <strong>idempotent</strong>: check the key against a dedup store before applying &mdash; a redelivery (Service Bus is at-least-once) is a no-op. That's effectively-once.</p>
+  <p><strong>5. Tenancy &amp; storage:</strong> present the spectrum &mdash; <em>silo</em> (DB/tenant: strongest isolation, costlier), <em>pool</em> (shared schema + RLS: cheapest density, noisy-neighbor risk), <em>bridge</em>. Typical: pool + row-level security for the long tail, silo for compliance-bound enterprise tenants &mdash; a pragmatic hybrid. Azure SQL is the ACID system of record.</p>
+  <p><strong>6. Consistency:</strong> <strong>transactional outbox</strong> so DB write + "event published" commit atomically; a relay publishes. Cross-service flows use a <strong>saga</strong> with compensations, not 2PC.</p>
+  <p><strong>7. Secrets/identity:</strong> <strong>Key Vault</strong> via <strong>managed identity</strong> &mdash; no secrets in config. Zero Trust throughout.</p>
+  <p><strong>8. Zero-downtime:</strong> <strong>Blue/Green</strong> via deployment slots (warm green, smoke test, swap) + <strong>Canary</strong> (Front Door weighted 5&rarr;25&rarr;100%) gated on live SLIs with auto-rollback. Schema changes are <strong>expand/contract</strong> so old+new run concurrently.</p>
+  <p><strong>9. Observability/resilience:</strong> App Insights + OpenTelemetry tracing across async hops (correlation id rides the message), DLQ alerts, Polly retries/circuit-breakers. Alert on error-budget burn, not raw counts.</p>
+  <table>
+    <tr><th>Concern</th><th>Azure</th><th>AWS</th></tr>
+    <tr><td>Edge / CDN / WAF</td><td>Front Door</td><td>CloudFront + WAF</td></tr>
+    <tr><td>API gateway</td><td>API Management</td><td>API Gateway</td></tr>
+    <tr><td>Ordered commands</td><td>Service Bus (sessions)</td><td>SQS FIFO</td></tr>
+    <tr><td>Event stream</td><td>Event Hubs</td><td>Kinesis / MSK</td></tr>
+    <tr><td>Serverless</td><td>Functions</td><td>Lambda</td></tr>
+    <tr><td>Containers</td><td>Container Apps / AKS</td><td>ECS Fargate / EKS</td></tr>
+    <tr><td>Relational</td><td>Azure SQL</td><td>RDS / Aurora</td></tr>
+    <tr><td>Secrets</td><td>Key Vault + MI</td><td>Secrets Manager + IAM</td></tr>
+    <tr><td>Observability</td><td>App Insights / Monitor</td><td>CloudWatch / X-Ray</td></tr>
+  </table>
+  <p><strong>Close with:</strong> "At-least-once delivery + idempotent consumers + transactional outbox gives exactly-once <em>effect</em> without pretending exactly-once <em>delivery</em> exists."</p>
+</div>
+
+<div class="qa">
+  <div class="tag">Zero Trust</div>
+  <p class="q">Q14. What is Zero Trust in that system &mdash; concretely?</p>
+  <p>Three principles, each a control. <strong>Verify explicitly:</strong> every service call authenticated via <strong>managed identity</strong> + Entra ID, JWTs validated (sig/issuer/audience/expiry) at APIM <em>and</em> the service. <strong>Least privilege:</strong> scoped RBAC (this function reads <em>this</em> secret, writes <em>this</em> queue, nothing else) + row-level security per tenant. <strong>Assume breach:</strong> private endpoints (stores not public), Key Vault with rotation, encryption in transit/at rest, full audit logging. The shift: the network is not the trust boundary &mdash; identity is.</p>
+</div>
+
+<!-- SECTION 3 -->
+<h1 class="section" id="p3">3. Tech Lead Behavioral &amp; Agile Scenarios (STAR)</h1>
+<p>~2 minutes each. Always land the <strong>result with a metric</strong> + a one-line "what I'd do differently." Self-awareness scores as high as the win.</p>
+
+<h2>3.1 Resource Mapping &amp; Scope Creep</h2>
+<div class="star">
+  <p><span class="label">Situation:</span> 6-engineer squad, committed quarterly roadmap, a payments rewrite carrying real tech debt. Week 2, a major client escalated via our VP demanding a net-new reporting feature "by month end."</p>
+  <p><span class="label">Task:</span> Own both the commitment and codebase health &mdash; satisfy a revenue-impacting stakeholder without torching capacity or letting debt become an outage.</p>
+  <p><span class="label">Action:</span> No blind yes/no. Ran a capacity map (velocity minus support + PTO), decomposed the ask with two seniors into a thin vertical slice (20% delivering 80% of the need), and gave the VP three options with trade-offs: (A) full feature, payments slips 3 wks; (B) thin slice in 2 sprints, milestone intact; (C) contractor, highest cost. Quantified the debt as reliability risk (recent incident rate). Chose B; protected ~20% capacity for debt; tracked both streams on one board.</p>
+  <p><span class="label">Result:</span> Slice shipped in 11 days; client renewed; payments milestone held; debt work cut the module's incident rate ~60% that quarter. <em>Differently:</em> socialize a lightweight intake/change process earlier to avoid the fire-drill triage.</p>
+</div>
+
+<h2>3.2 Delivery Bottleneck &amp; Status Reporting</h2>
+<div class="star">
+  <p><span class="label">Situation:</span> Two days before a contractual release, integration testing surfaced a data-corruption edge case in a downstream integration we didn't own. Management was already briefing the client on the date.</p>
+  <p><span class="label">Task:</span> Decide ship/hold/partial and communicate up honestly while keeping engineers on the fix, not the politics.</p>
+  <p><span class="label">Action:</span> Reproduced it, scoped blast radius (which tenants, reversibility), confirmed a correctness issue &mdash; hard no-ship on a payments path. Took status reporting onto myself; gave the team one focused objective. To management: led with impact ("silent corruption risk for ~3% of tenants"), options (full hold vs feature-flagged release to unaffected tenants), a recommendation (flagged partial), a concrete ask (one day + 9am go/no-go), and a scheduled update cadence so they stopped pinging engineers.</p>
+  <p><span class="label">Result:</span> Flagged release to unaffected tenants on date, risky path held one day, fixed with the partner. Zero corruption incidents, relationship intact, leadership praised the transparency. <em>Lesson:</em> execs handle bad news &mdash; <em>surprise</em> erodes trust, so report risk early with options attached.</p>
+</div>
+
+<h2>3.3 Architecture Conflict, Code Quality &amp; Mentoring</h2>
+<div class="star">
+  <p><span class="label">Situation:</span> A strong, opinionated senior kept merging large PRs that bypassed Clean Architecture boundaries (logic in controllers, data access from the API layer); meanwhile a junior was stalling &mdash; PRs sitting for days, under-confident.</p>
+  <p><span class="label">Task:</span> Protect architectural integrity without a personality war, and unblock + grow the struggling engineer.</p>
+  <p><span class="label">Action:</span> Moved the debate out of PR comments into a 30-min design session, reframed around agreed principles (testability, change isolation) not my preference. Codified boundaries as an <strong>ADR</strong> and enforced them in CI with an architecture test (NetArchTest) + PR templates &mdash; the rule became the system's, not mine; he became an advocate. For the junior: paired him with a senior, broke work into small PRs, gave him a low-risk but visible component to own, weekly 1:1s on confidence + specific feedback.</p>
+  <p><span class="label">Result:</span> Violations dropped to ~zero (CI caught them pre-review); review time fell. The junior shipped his component in six weeks and was taking stories independently next quarter. <em>Differently:</em> establish ADR + architecture tests at kickoff &mdash; encoding conventions up front beats fixing drift.</p>
+</div>
+
+<!-- SECTION 4 -->
+<h1 class="section" id="p4">4. Differentiating "Bonus Points" Playbook</h1>
+
+<h2>4.1 Cursor AI IDE in Production &mdash; Force Multiplier, Not Crutch</h2>
+<p>Framing that lands: <strong>"AI accelerates the parts I already know how to verify; it never makes the engineering decision."</strong></p>
+<ul>
+  <li><strong>Composer multi-file refactors:</strong> "Renaming a bounded context across ~30 files &mdash; DTOs, handlers, tests &mdash; I drove with Composer and reviewed the diff as one unit: an afternoon &rarr; ~20 min, and I read every hunk." Human owns intent + review.</li>
+  <li><strong>Project <code>.cursorrules</code>:</strong> "I encode our conventions &mdash; Clean Architecture boundaries, async-all-the-way, no <code>.Result</code>, logging/error patterns &mdash; so output is born compliant and consistent across the squad. Executable onboarding docs."</li>
+  <li><strong>AI-assisted tests:</strong> "It writes the boring arrange/act + obvious edges; I hand-write the tricky concurrency/boundary tests. I review assertions, not green checkmarks &mdash; a test that passes but asserts wrong is worse than none."</li>
+  <li><strong>Auditing AI diffs (the maturity signal):</strong> "I hunt its failure modes &mdash; missing <code>using</code>, leaky closures, sync-over-async, string-interpolated SQL, hardcoded secrets, over-broad catch. AI is fluent and confident, which is exactly why it needs a skeptical senior reading the diff."</li>
+</ul>
+<div class="callout"><strong>Trap:</strong> never imply you ship AI output unreviewed or "couldn't do it without AI." Posture: "It's a power tool. I'm accountable for every line that merges under my name."</div>
+
+<h2>4.2 Testing Strategy &amp; SRE</h2>
+<h3>Test pyramid I enforce</h3>
+<ul>
+  <li><strong>Unit (base):</strong> xUnit/NUnit + Moq. Fast, deterministic, behavior not implementation; gate every PR.</li>
+  <li><strong>Integration (high-value middle):</strong> <strong>Testcontainers</strong> spins real SQL Server/Redis/Service Bus per run &mdash; catches what mocks hide (real SQL, transactions, migrations) without shared-env flakiness. I push hardest here.</li>
+  <li><strong>E2E (thin top):</strong> <strong>Playwright</strong> on a few critical journeys (login, checkout, money path). Deliberately thin &mdash; slow/flaky at volume.</li>
+</ul>
+<h3>SRE &amp; observability</h3>
+<ul>
+  <li><strong>SLIs/SLOs &amp; error budgets:</strong> SLO (e.g. 99.9% &lt;300ms) managed to a budget &mdash; healthy &rarr; ship fast; burning &rarr; freeze features, spend on reliability. Turns "stable enough?" from argument into policy.</li>
+  <li><strong>OpenTelemetry / App Insights:</strong> tracing with a correlation id surviving async/queue hops, structured logs, RED/USE metrics &mdash; goal is cutting <strong>MTTR</strong> (alert &rarr; root cause in minutes via a trace).</li>
+  <li><strong>CI/CD + auto-rollback:</strong> trunk-based, PR gates (build/tests/SAST/coverage), progressive delivery, <strong>auto-rollback</strong> on SLI breach, <strong>DORA metrics</strong> as the delivery-system dashboard.</li>
+</ul>
+
+<!-- SECTION 5 -->
+<h1 class="section" id="p5">5. Large-Enterprise Fit Playbook</h1>
+<p>At a large enterprise the panel weighs <strong>blast-radius thinking, governance, and cross-team influence</strong> as heavily as raw coding. Calibrate your answers to these realities.</p>
+
+<h2>5.1 What the enterprise panel is really testing</h2>
+<table>
+  <tr><th>Signal</th><th>What they listen for</th></tr>
+  <tr><td>Operating at scale</td><td>You think in percentiles, error budgets, and cost &mdash; not "it works on my machine." Capacity math and failure modes are reflexive.</td></tr>
+  <tr><td>Governance maturity</td><td>Change management, approvals, audit trails, segregation of duties, and compliance (SOC 2 / ISO 27001 / PCI / HIPAA as relevant) are table stakes, not friction you resent.</td></tr>
+  <tr><td>Cross-team influence</td><td>You ship through other teams &mdash; platform, security, DBAs, release management &mdash; via ADRs, RFCs, and clear written proposals, not heroics.</td></tr>
+  <tr><td>Risk &amp; reversibility</td><td>Every change has a rollback, a feature flag, and a blast-radius assessment. You prefer boring, reversible steps over clever big-bangs.</td></tr>
+  <tr><td>Legacy pragmatism</td><td>You modernize via strangler-fig and incremental migration, respecting systems that make money, rather than demanding rewrites.</td></tr>
+</table>
+
+<h2>5.2 Enterprise-flavored talking points</h2>
+<ul>
+  <li><strong>Brownfield over greenfield:</strong> "I assume there's a system of record I must integrate with and can't break. I reach for the <em>strangler-fig</em> pattern &mdash; put a facade in front, route slices to the new service, decommission the old path once parity + metrics prove out."</li>
+  <li><strong>Platform vs product boundaries:</strong> "I distinguish shared-platform concerns (auth, observability, CI templates, paved roads) from product-squad ownership, and I consume the golden path rather than reinventing it &mdash; and I push back when the platform blocks delivery, with data."</li>
+  <li><strong>Security &amp; compliance as design input:</strong> "Threat modeling, data classification, and least-privilege are inputs at design time, not an audit scramble before go-live. Secrets in Key Vault, managed identity, private endpoints, and audit logging are defaults."</li>
+  <li><strong>Release governance:</strong> "Change-advisory expectations, maintenance windows, and staged rollouts are part of my design, and I automate the evidence (deployment records, test results, approvals) so governance doesn't throttle throughput."</li>
+  <li><strong>Vendor &amp; cost awareness:</strong> "I weigh build-vs-buy and FinOps &mdash; reserved capacity, autoscale floors, data-egress cost &mdash; because at enterprise scale an architecture choice is a budget line."</li>
+</ul>
+
+<h2>5.3 Enterprise curveballs &amp; one-line stances</h2>
+<table>
+  <tr><th>Question</th><th>Senior stance</th></tr>
+  <tr><td>"Our monolith is slowing us down &mdash; microservices?"</td><td>Only if teams/deploys are actually coupled. First a modular monolith with clean boundaries; split a service when a bounded context needs independent scale/deploy &mdash; never services sharing one DB.</td></tr>
+  <tr><td>"How do you migrate a legacy system with zero downtime?"</td><td>Strangler-fig + expand/contract schema + dual-write/shadow-read with reconciliation, cut over behind a flag, keep rollback until metrics prove parity.</td></tr>
+  <tr><td>"A critical third-party API is flaky."</td><td>Polly: timeout + retry-with-jitter + circuit breaker + bulkhead; cache/fallback where staleness is acceptable; queue and degrade gracefully rather than cascade-fail.</td></tr>
+  <tr><td>"Security wants to block your release."</td><td>Treat them as a stakeholder, not a gate: understand the finding, quantify risk, propose compensating controls + a remediation timeline, decide with data &mdash; never route around them.</td></tr>
+  <tr><td>"How do you handle a multi-region outage?"</td><td>Pre-defined RTO/RPO, active-passive or active-active with health-probe failover (Front Door/Traffic Manager), tested runbooks, and a blameless postmortem that produces action items, not blame.</td></tr>
+</table>
+
+<!-- SECTION 6 -->
+<h1 class="section" id="p6">6. Rapid-Fire Closing Round &amp; Questions To Ask Them</h1>
+<h2>Rapid-fire self-check (&lt;30s each)</h2>
+<table>
+  <tr><th>Prompt</th><th>One-line senior answer</th></tr>
+  <tr><td><code>IEnumerable</code> vs <code>IQueryable</code> at a repo boundary?</td><td>Return <code>IEnumerable</code>; <code>IQueryable</code> leaks the provider and risks client-eval / open-ended downstream queries.</td></tr>
+  <tr><td>Why not <code>async void</code>?</td><td>Exceptions can't be awaited/caught &mdash; they crash the process. Only valid for event handlers.</td></tr>
+  <tr><td><code>record</code> vs <code>class</code>?</td><td>Records for immutable value-semantics DTOs/messages; classes for entities with identity + behavior.</td></tr>
+  <tr><td>CTE vs temp table vs table variable?</td><td>CTE for readability (not perf); temp table when the optimizer needs stats on a big intermediate; table variable for tiny sets.</td></tr>
+  <tr><td>When does a microservice split hurt?</td><td>When services share a DB or deploy together &mdash; distributed-systems cost, none of the autonomy.</td></tr>
+  <tr><td>Idempotency key placement?</td><td>At the command boundary, checked before side effects, stored with the result so retries return the original outcome.</td></tr>
+</table>
+
+<h2>Smart questions to ask the panel (signals seniority)</h2>
+<ul>
+  <li>"On-call culture &mdash; blameless postmortems, and who owns MTTR?"</li>
+  <li>"How is this lead's technical authority drawn vs. the EM's people authority?"</li>
+  <li>"Biggest architectural regret right now &mdash; and appetite to pay it down?"</li>
+  <li>"How do you decide platform/shared vs. squad-owned concerns?"</li>
+  <li>"Current change-failure rate and lead time &mdash; and the one-year target?"</li>
+</ul>
+
+<!-- SECTION 7: CHEAT SHEET -->
+<h1 class="section" id="p7">7. One-Page Cheat Sheet (print &amp; carry)</h1>
+<div class="cheat">
+<div class="grid2">
+  <div>
+    <h3>.NET / C#</h3>
+    <ul>
+      <li>Async frees the thread at I/O; no sync-context in Core.</li>
+      <li>Thread-pool starvation = sync-over-async (<code>.Result</code>). Go async end-to-end.</li>
+      <li><code>ValueTask</code> only on hot, sync-completing paths; await once.</li>
+      <li>LOH &gt;85KB &rarr; pool buffers; Server GC for throughput.</li>
+      <li><code>Span&lt;T&gt;</code> for transient slicing; no boxing in hot loops.</li>
+      <li>Middleware order: exception &rarr; correlation &rarr; authN &rarr; authZ &rarr; tenant &rarr; endpoint.</li>
+    </ul>
+    <h3>SQL Server</h3>
+    <ul>
+      <li>Diagnose from the <em>actual</em> plan + Query Store, not a rewrite.</li>
+      <li>Fast&rarr;slow = stale stats or parameter sniffing.</li>
+      <li>Deadlock: canonical lock order + covering index; retry is defense only.</li>
+      <li>Composite index = Equality, Range, Include (covering kills key lookups).</li>
+      <li>Optimistic (<code>rowversion</code>) default; pessimistic only for tiny critical sections.</li>
+    </ul>
+    <h3>React</h3>
+    <ul>
+      <li>Separate server-state (React Query) from client-state (RTK/Zustand).</li>
+      <li>Context = DI, not a store; split providers.</li>
+      <li>Fix re-renders with Profiler + stable refs + virtualization, not blanket <code>useMemo</code>.</li>
+      <li>Tokens in <code>HttpOnly</code> cookie / BFF; never localStorage.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Cloud / Architecture</h3>
+    <ul>
+      <li>Exactly-once effect = at-least-once + idempotent consumers + outbox.</li>
+      <li>Service Bus (ordered commands) vs Event Hubs (high-volume events).</li>
+      <li>Tenancy: silo (isolation) / pool (density + RLS) / bridge; hybrid is fine.</li>
+      <li>Zero-downtime: Blue/Green slots + Canary, expand/contract schema.</li>
+      <li>Zero Trust: verify explicitly, least privilege, assume breach; identity is the boundary.</li>
+      <li>Resilience: Polly timeout + retry-jitter + circuit breaker + bulkhead.</li>
+    </ul>
+    <h3>Leadership (STAR spine)</h3>
+    <ul>
+      <li>Scope creep &rarr; capacity map + thin slice + options with trade-offs.</li>
+      <li>Release block &rarr; impact/options/recommendation/ask; shield the team.</li>
+      <li>Architecture conflict &rarr; ADR + CI architecture tests depersonalize it.</li>
+      <li>Always close with a metric + "what I'd do differently."</li>
+    </ul>
+    <h3>SRE / Delivery</h3>
+    <ul>
+      <li>Pyramid: Unit &rarr; Integration (Testcontainers) &rarr; thin E2E (Playwright).</li>
+      <li>SLO + error budget drives ship-vs-freeze.</li>
+      <li>OTel tracing cuts MTTR; DORA metrics track the delivery system.</li>
+      <li>Auto-rollback on SLI breach; every change flagged + reversible.</li>
+    </ul>
+    <h3>AI / Cursor</h3>
+    <ul>
+      <li>Force multiplier, accountable for every merged line.</li>
+      <li>Composer refactors + <code>.cursorrules</code> conventions + reviewed AI tests.</li>
+      <li>Audit diffs for leaks/sync-over-async/SQL-injection/secrets.</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<p class="small" style="margin-top:28px; border-top:1px solid var(--line); padding-top:8px;">
+Prepared as a strict hiring-panel coaching artifact. Calibrate specifics (team sizes, metrics, incident numbers) to your real history &mdash; the frameworks are scaffolding; your authentic stories win the offer.
+</p>
+
+</body>
+</html>

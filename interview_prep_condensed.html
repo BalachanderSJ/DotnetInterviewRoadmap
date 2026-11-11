@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Interview Prep &mdash; 2-Page Last-Minute Review</title>
+<style>
+  :root { --ink:#0f172a; --muted:#475569; --accent:#4338ca; --accent-dark:#1e1b4b; --accent-soft:#6366f1; --line:#d7dce5; --chip:#eef2ff; --teal:#0f766e; }
+  * { box-sizing:border-box; }
+  html { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body { font-family:"Segoe UI",Calibri,Arial,sans-serif; color:var(--ink); line-height:1.34; font-size:8.6pt; margin:0; }
+  code { font-family:"Cascadia Code",Consolas,monospace; background:#eef0f5; color:#b02a5b; padding:0 3px; border-radius:2px; font-size:7.7pt; }
+  .banner { background:linear-gradient(90deg,var(--accent-dark),var(--accent)); color:#fff; padding:10px 14px; border-radius:5px; margin-bottom:10px; }
+  .banner h1 { font-size:15pt; margin:0; }
+  .banner p { margin:2px 0 0; font-size:8.4pt; color:#c7d2fe; }
+  h2 { font-size:10pt; color:#fff; background:var(--accent); padding:4px 9px; border-radius:4px; margin:12px 0 6px; }
+  h3 { font-size:8.9pt; color:var(--accent-dark); margin:8px 0 2px; border-bottom:1px solid var(--accent-soft); padding-bottom:1px; }
+  ul { margin:3px 0; padding-left:15px; }
+  li { margin:1.5px 0; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; }
+  strong { color:var(--accent-dark); }
+  .q { font-weight:700; color:var(--accent-dark); }
+  .qa { margin:5px 0; page-break-inside:avoid; }
+  .page2 { page-break-before:always; }
+  .tag { display:inline-block; background:var(--chip); color:var(--accent-dark); font-size:6.6pt; font-weight:700; text-transform:uppercase; letter-spacing:.3px; padding:1px 6px; border-radius:8px; }
+  .foot { margin-top:10px; border-top:1px solid var(--line); padding-top:4px; font-size:7pt; color:var(--muted); }
+  @page { size:A4; margin:11mm 10mm; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="banner">
+  <h1>Senior / Lead .NET &amp; Azure &mdash; 2-Page Last-Minute Review</h1>
+  <p>Read on the way in. Full dossier has the depth; this is the recall layer.</p>
+</div>
+
+<h2>Cheat Sheet</h2>
+<div class="grid3">
+  <div>
+    <h3>.NET / C#</h3>
+    <ul>
+      <li>Async frees the thread at I/O; no sync-context in Core.</li>
+      <li>Starvation = sync-over-async (<code>.Result</code>) &rarr; go async end-to-end.</li>
+      <li><code>ValueTask</code> only on hot, sync-completing paths; await once.</li>
+      <li>LOH &gt;85KB &rarr; pool buffers; Server GC for throughput.</li>
+      <li><code>Span&lt;T&gt;</code> for transient slicing; no boxing in hot loops.</li>
+      <li>Middleware: exception&rarr;correlation&rarr;authN&rarr;authZ&rarr;tenant&rarr;endpoint.</li>
+    </ul>
+    <h3>SQL Server</h3>
+    <ul>
+      <li>Diagnose from actual plan + Query Store, not a rewrite.</li>
+      <li>Fast&rarr;slow = stale stats or parameter sniffing.</li>
+      <li>Deadlock: canonical lock order + covering index; retry is defense only.</li>
+      <li>Composite = Equality, Range, Include (covering kills lookups).</li>
+      <li>Optimistic (<code>rowversion</code>) default; pessimistic for tiny critical sections.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>React</h3>
+    <ul>
+      <li>Split server-state (React Query) from client-state (RTK/Zustand).</li>
+      <li>Context = DI, not a store; split providers.</li>
+      <li>Re-renders: Profiler + stable refs + virtualization, not blanket <code>useMemo</code>.</li>
+      <li>Tokens in <code>HttpOnly</code> cookie / BFF; never localStorage.</li>
+    </ul>
+    <h3>Cloud / Architecture</h3>
+    <ul>
+      <li>Exactly-once effect = at-least-once + idempotent consumers + outbox.</li>
+      <li>Service Bus (ordered commands) vs Event Hubs (volume events).</li>
+      <li>Tenancy: silo / pool (+RLS) / bridge; hybrid is fine.</li>
+      <li>Zero-downtime: Blue/Green slots + Canary, expand/contract schema.</li>
+      <li>Zero Trust: verify explicitly, least privilege, assume breach.</li>
+      <li>Resilience: Polly timeout + retry-jitter + breaker + bulkhead.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Leadership (STAR spine)</h3>
+    <ul>
+      <li>Scope creep &rarr; capacity map + thin slice + options w/ trade-offs.</li>
+      <li>Release block &rarr; impact/options/recommendation/ask; shield team.</li>
+      <li>Conflict &rarr; ADR + CI architecture tests depersonalize it.</li>
+      <li>Close with a metric + "what I'd do differently."</li>
+    </ul>
+    <h3>SRE / Delivery</h3>
+    <ul>
+      <li>Pyramid: Unit &rarr; Integration (Testcontainers) &rarr; thin E2E (Playwright).</li>
+      <li>SLO + error budget drives ship-vs-freeze.</li>
+      <li>OTel tracing cuts MTTR; DORA tracks the delivery system.</li>
+      <li>Auto-rollback on SLI breach; every change flagged + reversible.</li>
+    </ul>
+    <h3>AI / Cursor</h3>
+    <ul>
+      <li>Force multiplier; accountable for every merged line.</li>
+      <li>Composer refactors + <code>.cursorrules</code> + reviewed AI tests.</li>
+      <li>Audit diffs: leaks, sync-over-async, SQL injection, secrets.</li>
+    </ul>
+  </div>
+</div>
+
+<h3>Enterprise stances (one-liners)</h3>
+<div class="grid2">
+  <ul>
+    <li><strong>Monolith&rarr;microservices?</strong> Only if teams/deploys are truly coupled. Modular monolith first; never shared DB.</li>
+    <li><strong>Zero-downtime migration?</strong> Strangler-fig + expand/contract + dual-write/shadow-read, cut over behind a flag.</li>
+  </ul>
+  <ul>
+    <li><strong>Flaky third-party?</strong> Polly breaker + bulkhead + cache/fallback; degrade, don't cascade.</li>
+    <li><strong>Security blocks release?</strong> Stakeholder not gate: quantify risk, compensating controls, remediation timeline.</li>
+  </ul>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page2"></div>
+<h2>Top 10 Questions &mdash; Answer Spine</h2>
+
+<div class="qa"><span class="tag">Async</span> <span class="q">1. Why does async scale under load?</span><br/>Thread returns to pool at I/O (IOCP resumes continuation); few threads serve thousands of I/O-bound requests. No sync-context in Core. Killer = sync-over-async &rarr; pool starvation (p99 climbs, CPU idle). Nothing gained for CPU-bound work.</div>
+
+<div class="qa"><span class="tag">ValueTask</span> <span class="q">2. <code>ValueTask</code> vs <code>Task</code>?</span><br/><code>Task</code> heap-allocates per call; <code>ValueTask</code> avoids it on sync-completing hot paths. Await exactly once, no double-await, no stored-await, no early <code>.Result</code>; else <code>.AsTask()</code>. Default <code>Task</code>; <code>ValueTask</code> only when a profiler proves it.</div>
+
+<div class="qa"><span class="tag">GC</span> <span class="q">3. Latency spikes + rising memory &rarr; GC?</span><br/>Confirm via counters (Gen2/LOH, %time in GC, alloc rate). LOH &gt;85KB &rarr; pool buffers/stream; Gen0 churn &rarr; <code>Span</code>/<code>stackalloc</code>; wrong mode &rarr; Server GC; mid-life leaks &rarr; bounded cache/weak refs. Trade-off: Server GC costs memory on constrained containers.</div>
+
+<div class="qa"><span class="tag">SQL latency</span> <span class="q">4. Fast-before, slow-now, same query?</span><br/>Read the actual plan + Query Store first. Usually stale stats or parameter sniffing; also blocking or a missing covering index as data grew. Bring the Query Store regression artifact, not a guess.</div>
+
+<div class="qa"><span class="tag">Deadlocks</span> <span class="q">5. Recurring deadlocks under heavy writes?</span><br/>Capture the deadlock graph. Fix the cause: canonical lock ordering, covering index (seek not scan), shorter transactions. Retry-on-1205 with jitter is defense-in-depth; consider RCSI (watch tempdb).</div>
+
+<div class="qa"><span class="tag">Indexing</span> <span class="q">6. Composite index column order?</span><br/>Equality, Range, then Include. Leading = most-selective equality columns; select-only columns go in <code>INCLUDE</code> for a covering index (no key lookups). Audit unused/duplicate &mdash; every index costs on writes.</div>
+
+<div class="qa"><span class="tag">Concurrency</span> <span class="q">7. Optimistic vs pessimistic?</span><br/>Optimistic (<code>rowversion</code> in WHERE) default for read-heavy contention &mdash; no locks across think-time. Pessimistic only for tiny high-value critical sections. Money movement adds an idempotency key (separate concern).</div>
+
+<div class="qa"><span class="tag">React tokens</span> <span class="q">8. Where to store the SPA token?</span><br/><code>HttpOnly</code>+<code>Secure</code>+<code>SameSite</code> cookie, ideally via a BFF holding the real OAuth tokens server-side &mdash; browser never sees a bearer. localStorage = XSS exfil. Cookie cost is CSRF &rarr; SameSite + anti-forgery + CSP.</div>
+
+<div class="qa"><span class="tag">System design</span> <span class="q">9. Event-driven multi-tenant transaction system, 10k TPS?</span><br/>Front Door&rarr;APIM (JWT, rate-limit)&rarr;thin intake assigns idempotency key&rarr;Service Bus (sessions for order)&rarr;idempotent Functions (dedup store)&rarr;Azure SQL + transactional outbox&rarr;saga for cross-service. Tenancy pool+RLS / silo hybrid. Blue/Green + Canary, OTel tracing. "At-least-once + idempotent + outbox = exactly-once effect."</div>
+
+<div class="qa"><span class="tag">Zero Trust</span> <span class="q">10. Zero Trust concretely?</span><br/>Verify explicitly (managed identity + validated JWTs at APIM and service); least privilege (scoped RBAC + row-level security); assume breach (private endpoints, Key Vault rotation, encryption, audit logs). Identity is the boundary, not the network.</div>
+
+<h3>Questions to ask them</h3>
+<ul>
+  <li>On-call culture &mdash; blameless postmortems, who owns MTTR? &middot; This lead's technical authority vs the EM's people authority? &middot; Biggest architectural regret + appetite to pay it down? &middot; Platform/shared vs squad-owned boundaries? &middot; Current change-failure rate &amp; lead time, and the one-year target?</li>
+</ul>
+
+<div class="foot">2-page recall layer. Lead with the decision, name the trade-off, close with a metric + "what I'd do differently." Calibrate all numbers to your real history.</div>
+
+</body>
+</html>
