@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Local dashboard for the .NET tech-lead interview roadmaps, study guides, and job-search notes in this folder.">
+  <meta name="theme-color" content="#0b1218">
+  <title>Interview library · .NET roadmap</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%2312352f'/%3E%3Cpath fill='%233dccb0' d='M3 4h10v1.6H3zm0 3.2h7v1.6H3zm0 3.2h10v1.6H3z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="dashboard.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to resources</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="bar-top">
+        <a class="brand" href="#content">
+          <span class="brand-mark" aria-hidden="true">NET</span>
+          <span>
+            <h1>Interview library</h1>
+            <p>Local study dashboard</p>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Dashboard sections">
+          <a href="#featured">Featured</a>
+          <a href="#dotnet">.NET</a>
+          <a href="#angular">Angular</a>
+          <a href="#dsa">DSA</a>
+          <a href="#interview">Prep</a>
+          <a href="#jobs">Jobs</a>
+          <a href="#downloads">Files</a>
+        </nav>
+      </div>
+
+      <div class="search-row">
+        <div class="search-field">
+          <label for="search">Search</label>
+          <div class="search-input">
+            <input id="search" type="search" placeholder="Title, description, or category" autocomplete="off" spellcheck="false">
+            <button type="button" id="clear-search" hidden>Clear</button>
+          </div>
+        </div>
+        <p id="visible-summary" class="summary" aria-live="polite" aria-atomic="true">Showing 10 of 10 guides, 21 of 21 files, and 10 of 10 scripts.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter by category">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="featured" aria-pressed="false">Featured Roadmaps</button>
+        <button type="button" data-filter="dotnet" aria-pressed="false">.NET Architecture and Backend</button>
+        <button type="button" data-filter="angular" aria-pressed="false">Angular and Frontend</button>
+        <button type="button" data-filter="dsa" aria-pressed="false">DSA and System Design</button>
+        <button type="button" data-filter="interview" aria-pressed="false">Interview Preparation</button>
+        <button type="button" data-filter="jobs" aria-pressed="false">Job Search and Career</button>
+        <button type="button" data-filter="downloads" aria-pressed="false">Downloads and Source Builders</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="wrap">
+      <div class="hero">
+        <p class="lede">A local index of the generated tech-lead, architect, and interview materials in this folder. Read a guide in the browser, or download the PDF or Word file. Nothing on this page is loaded from a network.</p>
+        <ul class="stats" aria-label="Library totals">
+          <li><strong>10</strong><span>study guides</span></li>
+          <li><strong>21</strong><span>generated files</span></li>
+          <li><strong>10</strong><span>build scripts</span></li>
+        </ul>
+        <noscript>
+          <p class="noscript">Search and category filters stay inactive without JavaScript. Every guide link on this page still opens.</p>
+        </noscript>
+      </div>
+
+      <section id="featured" class="section section-featured" aria-labelledby="featured-title" data-section-block="featured">
+        <div class="section-head">
+          <h2 id="featured-title">Featured Roadmaps</h2>
+          <p class="section-count" data-section-count>4 of 4</p>
+          <p class="section-intro">The multi-day plans. Start with the 10-day roadmap, then open the deep dive for the day that felt thin.</p>
+        </div>
+        <div class="cards">
+          <article class="card card-lead" data-filter-item data-kind="guide" data-section="featured" data-search="featured roadmaps .net tech lead 10-day interview roadmap mentor plan c# asp.net core entity framework sql server azure app service functions microservices legacy migration html pdf docx">
+            <div class="card-body">
+              <p class="category">Featured Roadmaps</p>
+              <ul class="badges" aria-label="Formats">
+                <li><span class="badge badge-html">HTML</span></li>
+                <li><span class="badge badge-pdf">PDF</span></li>
+                <li><span class="badge badge-docx">DOCX</span></li>
+              </ul>
+              <h3>.NET Tech Lead — 10-Day Interview Roadmap</h3>
+              <p class="desc">Ten-day mentor plan for an eight-year .NET developer moving into a tech lead seat. Each day is C#, ASP.NET Core, EF Core, SQL Server, Azure, microservices, or a legacy migration, spoken in 90-second answers.</p>
+              <div class="actions">
+                <a class="btn btn-primary" href="NET-Tech-Lead-10-Day-Interview-Roadmap.html">Read online</a>
+                <a class="btn" href="NET-Tech-Lead-10-Day-Interview-Roadmap.pdf" download>Download PDF</a>
+                <a class="btn" href="NET-Tech-Lead-10-Day-Interview-Roadmap.docx" download>Download DOCX</a>
+              </div>
+            </div>
+            <div class="lead-note">
+              <p class="category">Suggested path</p>
+              <ol>
+                <li><a href="NET-Tech-Lead-10-Day-Interview-Roadmap.html">This 10-day roadmap</a></li>
+                <li><a href="NET-Tech-Lead-10-Day-Deep-Dive.html">Deep dive on the weak day</a></li>
+                <li><a href="NET-Auth-Scale-Azure-SQL.html">Auth, Azure, and SQL</a> or <a href="NET-DSA-and-System-Design.html">DSA and system design</a></li>
+                <li><a href="NET-Further-20-Day-Study.html">Next 20 days for pipelines and MVC</a></li>
+                <li><a href="NET-Angular-Technical-Architect-30-Day.html">30-day architect roadmap</a></li>
+              </ol>
+            </div>
+          </article>
+
+          <article class="card" data-filter-item data-kind="guide" data-section="featured" data-search="featured roadmaps .net tech lead 10-day deep dive reference edition worked examples web api ef core sql azure microservices mock interview html pdf">
+            <p class="category">Featured Roadmaps</p>
+            <ul class="badges" aria-label="Formats">
+              <li><span class="badge badge-html">HTML</span></li>
+              <li><span class="badge badge-pdf">PDF</span></li>
+            </ul>
+            <h3>.NET Tech Lead — 10-Day Deep Dive</h3>
+            <p class="desc">Reference edition that sits beside the roadmap. Worked depth for the same ten days, from C# and design through the Web API, data, Azure hosts, system design, and a mock day.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="NET-Tech-Lead-10-Day-Deep-Dive.html">Read online</a>
+              <a class="btn" href="NET-Tech-Lead-10-Day-Deep-Dive.pdf" download>Download PDF</a>
+            </div>
+          </article>
+
+          <article class="card" data-filter-item data-kind="guide" data-section="featured" data-search="featured roadmaps .net and angular 30 days to technical architect quality attributes c4 adr identity azure frontend boundaries html pdf">
+            <p class="category">Featured Roadmaps</p>
+            <ul class="badges" aria-label="Formats">
+              <li><span class="badge badge-html">HTML</span></li>
+              <li><span class="badge badge-pdf">PDF</span></li>
+            </ul>
+            <h3>.NET and Angular — 30 Days to Technical Architect</h3>
+            <p class="desc">Thirty days from full-stack delivery into a technical architect seat. Quality attributes, C4, architecture decision records, identity, Azure shape, Angular boundaries, and how to run a design review.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="NET-Angular-Technical-Architect-30-Day.html">Read online</a>
+              <a class="btn" href="NET-Angular-Technical-Architect-30-Day.pdf" download>Download PDF</a>
+            </div>
+          </article>
+
+          <article class="card" data-filter-item data-kind="guide" data-section="featured" data-search="featured roadmaps .net tech lead next 20 days further 20-day study git azure pipelines github actions asp.net core mvc mvvm microservices ai-assisted delivery html pdf">
+            <p class="category">Featured Roadmaps</p>
+            <ul class="badges" aria-label="Formats">
+              <li><span class="badge badge-html">HTML</span></li>
+              <li><span class="badge badge-pdf">PDF</span></li>
+            </ul>
+            <h3>.NET Tech Lead — Next 20 Days</h3>
+            <p class="desc">Further study after the roadmap and the deep dive. Git, Azure Pipelines, GitHub Actions, ASP.NET Core MVC, MVVM, a service boundary you can deploy, and AI-assisted delivery with review still in place.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="NET-Further-20-Day-Study.html">Read online</a>
+              <a class="btn" href="NET-Further-20-Day-Study.pdf" download>Download PDF</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="dotnet" class="section" aria-labelledby="dotnet-title" data-section-block="dotnet">
+        <div class="section-head">
+          <h2 id="dotnet-title">.NET Architecture and Backend</h2>
+          <p class="section-count" data-section-count>1 of 1</p>
+          <p class="section-intro">The follow-up a panel asks after the 90-second answer: authentication, scale, Azure, and SQL Server.</p>
+        </div>
+        <div class="cards">
+          <article class="card" data-filter-item data-kind="guide" data-section="dotnet" data-search=".net architecture and backend .net tech lead auth scalability azure and sql jwt entra id web api scale azure sql server html pdf">
+            <p class="category">.NET Architecture and Backend</p>
+            <ul class="badges" aria-label="Formats">
+              <li><span class="badge badge-html">HTML</span></li>
+              <li><span class="badge badge-pdf">PDF</span></li>
+            </ul>
+            <h3>.NET Tech Lead — Auth, Scalability, Azure, and SQL</h3>
+            <p class="desc">Companion to the 10-day roadmap and the deep dive. JWT and Entra ID, what does not scale on a Web API, Azure hosting choices, and SQL Server questions with the operational consequence attached.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="NET-Auth-Scale-Azure-SQL.html">Read online</a>
+              <a class="btn" href="NET-Auth-Scale-Azure-SQL.pdf" download>Download PDF</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="angular" class="section" aria-labelledby="angular-title" data-section-block="angular">
+        <div class="section-head">
+          <h2 id="angular-title">Angular and Frontend</h2>
+          <p class="section-count" data-section-count>1 of 1</p>
+          <p class="section-intro">Frontend interview depth for about two years of Angular, separate from the 30-day architect roadmap.</p>
+        </div>
+        <div class="cards">
+          <article class="card" data-filter-item data-kind="guide" data-section="angular" data-search="angular and frontend angular interview questions for 2 years of experience standalone components signals forms routing http ngmodule html pdf">
+            <p class="category">Angular and Frontend</p>
+            <ul class="badges" aria-label="Formats">
+              <li><span class="badge badge-html">HTML</span></li>
+              <li><span class="badge badge-pdf">PDF</span></li>
+            </ul>
+            <h3>Angular — Interview Questions for 2 Years of Experience</h3>
+            <p class="desc">Questions and answers for a developer who has shipped screens. Standalone components, signals, forms, routing, and HTTP against a .NET API, plus the NgModule and Zone.js code you still meet.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="Angular-Interview-2-Years.html">Read online</a>
+              <a class="btn" href="Angular-Interview-2-Years.pdf" download>Download PDF</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="dsa" class="section" aria-labelledby="dsa-title" data-section-block="dsa">
+        <div class="section-head">
+          <h2 id="dsa-title">DSA and System Design</h2>
+          <p class="section-count" data-section-count>1 of 1</p>
+          <p class="section-intro">Coding-screen practice in C# and the system-design conversation for a tech-lead loop.</p>
+        </div>
+        <div class="cards">
+          <article class="card" data-filter-item data-kind="guide" data-section="dsa" data-search="dsa and system design .net tech lead dsa in c# coding screen whiteboard asp.net core azure sql service bus html pdf">
+            <p class="category">DSA and System Design</p>
+            <ul class="badges" aria-label="Formats">
+              <li><span class="badge badge-html">HTML</span></li>
+              <li><span class="badge badge-pdf">PDF</span></li>
+            </ul>
+            <h3>.NET Tech Lead — DSA and System Design</h3>
+            <p class="desc">A practical DSA refresh in C# for someone with about eight years of .NET, then system-design drills around ASP.NET Core, Azure SQL, and Service Bus. Companion to the roadmap, the deep dive, and the 20-day guide.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="NET-DSA-and-System-Design.html">Read online</a>
+              <a class="btn" href="NET-DSA-and-System-Design.pdf" download>Download PDF</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="interview" class="section" aria-labelledby="interview-title" data-section-block="interview">
+        <div class="section-head">
+          <h2 id="interview-title">Interview Preparation</h2>
+          <p class="section-count" data-section-count>2 of 2</p>
+          <p class="section-intro">The 14-day senior dossier, and the two-page sheet to reread before you walk in.</p>
+        </div>
+        <div class="cards">
+          <article class="card" data-filter-item data-kind="guide" data-section="interview" data-search="interview preparation senior lead full-stack .net interview prep roadmap 14-day sprint schedule star behavioral azure cheat sheet html pdf">
+            <p class="category">Interview Preparation</p>
+            <ul class="badges" aria-label="Formats">
+              <li><span class="badge badge-html">HTML</span></li>
+              <li><span class="badge badge-pdf">PDF</span></li>
+            </ul>
+            <h3>Senior / Lead Full-Stack .NET Interview Prep Roadmap</h3>
+            <p class="desc">Fourteen-day panel dossier for a senior or lead loop. Sprint schedule, high-frequency technical answers, STAR leadership scenarios, enterprise-fit notes, and a one-page cheat sheet.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="interview_prep_roadmap.html">Read online</a>
+              <a class="btn" href="Interview_Prep_Roadmap.pdf" download>Download PDF</a>
+            </div>
+          </article>
+
+          <article class="card" data-filter-item data-kind="guide" data-section="interview" data-search="interview preparation interview prep 2-page last-minute review senior .net azure recall sheet html pdf">
+            <p class="category">Interview Preparation</p>
+            <ul class="badges" aria-label="Formats">
+              <li><span class="badge badge-html">HTML</span></li>
+              <li><span class="badge badge-pdf">PDF</span></li>
+            </ul>
+            <h3>Interview Prep — 2-Page Last-Minute Review</h3>
+            <p class="desc">The recall layer for the senior .NET and Azure dossier. Read it on the way in. The PDF is the two-page print of this sheet.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="interview_prep_condensed.html">Read online</a>
+              <a class="btn" href="Interview_Prep_2Page_Review.pdf" download>Download PDF</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="jobs" class="section" aria-labelledby="jobs-title" data-section-block="jobs">
+        <div class="section-head">
+          <h2 id="jobs-title">Job Search and Career</h2>
+          <p class="section-count" data-section-count>1 of 1</p>
+          <p class="section-intro">Search, screens, and offers for a tech-lead or senior .NET seat in India. Technical practice stays in the roadmaps.</p>
+        </div>
+        <div class="cards">
+          <article class="card" data-filter-item data-kind="guide" data-section="jobs" data-search="job search and career .net tech lead india high-pay job search linkedin naukri instahyre cutshort offers html pdf">
+            <p class="category">Job Search and Career</p>
+            <ul class="badges" aria-label="Formats">
+              <li><span class="badge badge-html">HTML</span></li>
+              <li><span class="badge badge-pdf">PDF</span></li>
+            </ul>
+            <h3>.NET Tech Lead — India High-Pay Job Search</h3>
+            <p class="desc">A search system for a high-paying tech lead or senior engineer role. Pay floor, LinkedIn, Naukri, and the other boards, profile language, recruiter screens, and how to compare offers on fixed cash.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="India-High-Pay-Job-Search.html">Read online</a>
+              <a class="btn" href="India-High-Pay-Job-Search.pdf" download>Download PDF</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="downloads" class="section" aria-labelledby="downloads-title" data-section-block="downloads">
+        <div class="section-head">
+          <h2 id="downloads-title">Downloads and Source Builders</h2>
+          <p class="section-count" data-section-count>31 of 31</p>
+          <p class="section-intro">Every study file in this folder, then the Python builders that produce the generated guides. Day modules, caches, and editor files stay off this page.</p>
+        </div>
+
+        <div class="panel" id="file-panel" data-panel>
+          <h3 id="study-files-title">Study files</h3>
+          <p class="panel-note">The same documents as the cards above, listed by filename so a download is easy to find.</p>
+          <div class="table-wrap">
+            <table class="files" aria-labelledby="study-files-title">
+              <thead>
+                <tr>
+                  <th scope="col">Document</th>
+                  <th scope="col">Format</th>
+                  <th scope="col">File</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-tech-lead-10-day-interview-roadmap.html html 10-day interview roadmap">
+                  <td>10-day interview roadmap</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="NET-Tech-Lead-10-Day-Interview-Roadmap.html">NET-Tech-Lead-10-Day-Interview-Roadmap.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-tech-lead-10-day-interview-roadmap.pdf pdf 10-day interview roadmap">
+                  <td>10-day interview roadmap</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="NET-Tech-Lead-10-Day-Interview-Roadmap.pdf">NET-Tech-Lead-10-Day-Interview-Roadmap.pdf</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-tech-lead-10-day-interview-roadmap.docx docx word 10-day interview roadmap">
+                  <td>10-day interview roadmap</td>
+                  <td><span class="badge badge-docx">DOCX</span></td>
+                  <td><a href="NET-Tech-Lead-10-Day-Interview-Roadmap.docx">NET-Tech-Lead-10-Day-Interview-Roadmap.docx</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-tech-lead-10-day-deep-dive.html html deep dive">
+                  <td>10-day deep dive</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="NET-Tech-Lead-10-Day-Deep-Dive.html">NET-Tech-Lead-10-Day-Deep-Dive.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-tech-lead-10-day-deep-dive.pdf pdf deep dive">
+                  <td>10-day deep dive</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="NET-Tech-Lead-10-Day-Deep-Dive.pdf">NET-Tech-Lead-10-Day-Deep-Dive.pdf</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-angular-technical-architect-30-day.html html 30-day architect">
+                  <td>30-day technical architect</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="NET-Angular-Technical-Architect-30-Day.html">NET-Angular-Technical-Architect-30-Day.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-angular-technical-architect-30-day.pdf pdf 30-day architect">
+                  <td>30-day technical architect</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="NET-Angular-Technical-Architect-30-Day.pdf">NET-Angular-Technical-Architect-30-Day.pdf</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-further-20-day-study.html html next 20 days">
+                  <td>Next 20 days</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="NET-Further-20-Day-Study.html">NET-Further-20-Day-Study.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-further-20-day-study.pdf pdf next 20 days">
+                  <td>Next 20 days</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="NET-Further-20-Day-Study.pdf">NET-Further-20-Day-Study.pdf</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-auth-scale-azure-sql.html html auth azure sql">
+                  <td>Auth, scalability, Azure, and SQL</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="NET-Auth-Scale-Azure-SQL.html">NET-Auth-Scale-Azure-SQL.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-auth-scale-azure-sql.pdf pdf auth azure sql">
+                  <td>Auth, scalability, Azure, and SQL</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="NET-Auth-Scale-Azure-SQL.pdf">NET-Auth-Scale-Azure-SQL.pdf</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders angular-interview-2-years.html html angular">
+                  <td>Angular, about 2 years</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="Angular-Interview-2-Years.html">Angular-Interview-2-Years.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders angular-interview-2-years.pdf pdf angular">
+                  <td>Angular, about 2 years</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="Angular-Interview-2-Years.pdf">Angular-Interview-2-Years.pdf</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-dsa-and-system-design.html html dsa system design">
+                  <td>DSA and system design</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="NET-DSA-and-System-Design.html">NET-DSA-and-System-Design.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders net-dsa-and-system-design.pdf pdf dsa system design">
+                  <td>DSA and system design</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="NET-DSA-and-System-Design.pdf">NET-DSA-and-System-Design.pdf</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders interview_prep_roadmap.html html 14-day senior dossier">
+                  <td>14-day senior dossier</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="interview_prep_roadmap.html">interview_prep_roadmap.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders interview_prep_roadmap.pdf pdf 14-day senior dossier">
+                  <td>14-day senior dossier</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="Interview_Prep_Roadmap.pdf">Interview_Prep_Roadmap.pdf</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders interview_prep_condensed.html html 2-page review">
+                  <td>2-page last-minute review</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="interview_prep_condensed.html">interview_prep_condensed.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders interview_prep_2page_review.pdf pdf 2-page review">
+                  <td>2-page last-minute review</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="Interview_Prep_2Page_Review.pdf">Interview_Prep_2Page_Review.pdf</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders india-high-pay-job-search.html html job search">
+                  <td>India high-pay job search</td>
+                  <td><span class="badge badge-html">HTML</span></td>
+                  <td><a href="India-High-Pay-Job-Search.html">India-High-Pay-Job-Search.html</a></td>
+                </tr>
+                <tr data-filter-item data-kind="file" data-section="downloads" data-search="downloads and source builders india-high-pay-job-search.pdf pdf job search">
+                  <td>India high-pay job search</td>
+                  <td><span class="badge badge-pdf">PDF</span></td>
+                  <td><a href="India-High-Pay-Job-Search.pdf">India-High-Pay-Job-Search.pdf</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel" id="tool-panel" data-panel>
+          <h3 id="build-tools-title">Build tools</h3>
+          <p class="panel-note">Secondary developer resources. These scripts rebuild the generated guides. The 14-day dossier and the two-page review are maintained directly as HTML. Internal day modules are not listed.</p>
+          <div class="tools">
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders build_roadmap.py 10-day interview roadmap docx word">
+              <span class="badge badge-py">PY</span>
+              <h4>build_roadmap.py</h4>
+              <p class="desc">Builds the 10-day interview roadmap Word document from the day content modules.</p>
+              <a class="btn" href="build_roadmap.py">View script</a>
+            </article>
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders build_deep.py deep dive html pdf">
+              <span class="badge badge-py">PY</span>
+              <h4>build_deep.py</h4>
+              <p class="desc">Builds the 10-day deep-dive HTML and PDF. Does not change the roadmap.</p>
+              <a class="btn" href="build_deep.py">View script</a>
+            </article>
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders build_arch30.py 30-day technical architect html pdf">
+              <span class="badge badge-py">PY</span>
+              <h4>build_arch30.py</h4>
+              <p class="desc">Builds the 30-day .NET and Angular technical architect HTML and PDF.</p>
+              <a class="btn" href="build_arch30.py">View script</a>
+            </article>
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders build_study20.py next 20 days further study html pdf">
+              <span class="badge badge-py">PY</span>
+              <h4>build_study20.py</h4>
+              <p class="desc">Builds the next-20-days HTML and PDF.</p>
+              <a class="btn" href="build_study20.py">View script</a>
+            </article>
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders build_prep_depth.py auth scalability azure sql html pdf">
+              <span class="badge badge-py">PY</span>
+              <h4>build_prep_depth.py</h4>
+              <p class="desc">Builds the auth, scalability, Azure, and SQL HTML and PDF.</p>
+              <a class="btn" href="build_prep_depth.py">View script</a>
+            </article>
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders build_angular.py angular interview html pdf">
+              <span class="badge badge-py">PY</span>
+              <h4>build_angular.py</h4>
+              <p class="desc">Builds the Angular two-year interview HTML and PDF.</p>
+              <a class="btn" href="build_angular.py">View script</a>
+            </article>
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders build_dsa_sd.py dsa system design html pdf">
+              <span class="badge badge-py">PY</span>
+              <h4>build_dsa_sd.py</h4>
+              <p class="desc">Builds the DSA and system-design HTML and PDF.</p>
+              <a class="btn" href="build_dsa_sd.py">View script</a>
+            </article>
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders build_jobs.py india job search html pdf">
+              <span class="badge badge-py">PY</span>
+              <h4>build_jobs.py</h4>
+              <p class="desc">Builds the India high-pay job-search HTML and PDF.</p>
+              <a class="btn" href="build_jobs.py">View script</a>
+            </article>
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders render_html.py standalone html embedded css">
+              <span class="badge badge-py">PY</span>
+              <h4>render_html.py</h4>
+              <p class="desc">Writes a standalone HTML document with the shared print CSS. The HTML builders import it.</p>
+              <a class="btn" href="render_html.py">View script</a>
+            </article>
+            <article class="tool" data-filter-item data-kind="tool" data-section="downloads" data-search="downloads and source builders render_docx.py word document roadmap">
+              <span class="badge badge-py">PY</span>
+              <h4>render_docx.py</h4>
+              <p class="desc">Renders roadmap blocks to a Word document. Used by build_roadmap.py.</p>
+              <a class="btn" href="render_docx.py">View script</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div id="empty-state" class="empty" hidden>
+        <h2>No matching resources</h2>
+        <p id="empty-text">No resources match that search.</p>
+        <button type="button" class="btn" id="empty-clear">Clear search</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>This dashboard is a local navigation page for the generated interview roadmap materials in this folder. It does not replace the study documents, and it does not change how those documents are built.</p>
+      <p>The guides were prepared in October 2026. Open this page by running <code>python -m http.server 8000</code> in this directory, then visit the site root in a browser. Python’s directory listing stays hidden because this <code>index.html</code> is the default page.</p>
+    </div>
+  </footer>
+</body>
+</html>
